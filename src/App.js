@@ -1,5 +1,5 @@
 import React from 'react';
-import FoodsList from './components/FoodsList';
+import FoodsList from './components/FoodList/FoodsList';
 
 
 

@@ -1,0 +1,11 @@
+.foodItem{
+    width: 300px;
+    margin: 10px;
+    border: 1px solid blue;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.foodItem:hover{
+    background-color: aqua;
+}
