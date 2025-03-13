@@ -32,3 +32,8 @@ form {
     flex-direction: column;
     gap: 10px;
 }
+
+.backdrop.hide-modal {
+    opacity: 0;
+    pointer-events: none;
+}
