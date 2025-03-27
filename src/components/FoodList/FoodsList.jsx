@@ -27,12 +27,17 @@ class FoodsList extends React.Component{
         }
        
     }
-    onOpenModal(){
-      console.log("Test")
+    onOpenModal =() =>{
+          this.setState({ isOpen: true });
     }
-    addProduct(){
-    
-    }
+    onCloseModal = () => {
+        this.setState({ isOpen: false });
+    };
+    addProduct = (newProduct) => {
+        this.setState((prevState) => ({
+            food: [...prevState.food, newProduct]
+        }));
+    };
 
     render(){
        
@@ -40,7 +45,7 @@ class FoodsList extends React.Component{
             <div>
                 
                 <h1 className={style.title}>Foods List</h1>
-                <button onClick={this.addProduct}>Add product</button>
+                <button onClick={this.onOpenModal}>Add product</button>
                 <ol className={style.foodList}>
                     {foodsData.map((fooddata)=>{
                         return (
@@ -48,7 +53,9 @@ class FoodsList extends React.Component{
                         )
                     })}
                 </ol>
-            <Modal openModal={this.onOpenModal}/>
+                {this.state.isOpen && (
+                    <Modal onAddProduct={this.addProduct} onClose={this.onCloseModal} />
+                )}
             </div>
         )
     }
